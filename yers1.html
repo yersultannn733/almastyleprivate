@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALMA-style — Портал Персонала</title>
+    <link rel="stylesheet" href="yers2.css">
+</head>
+<body>
+
+    <div class="login-overlay" id="loginModal">
+        <div class="login-card">
+            <h2>ALMA-style</h2>
+            <p>Вход в систему персонала</p>
+            <form id="loginForm">
+                <input type="text" id="employeeName" placeholder="Имя сотрудника" required>
+                <input type="password" placeholder="Пароль доступа" required>
+                <button type="submit" class="btn">Войти в систему</button>
+            </form>
+        </div>
+    </div>
+
+    <header>
+        <div class="brand">
+            <h1>ALMA-style</h1>
+            <span class="badge">Staff Portal</span>
+        </div>
+        <div class="user-info">
+            <span id="userName">Сотрудник: Гость</span>
+            <button class="btn btn-logout" id="logoutBtn">Выйти</button>
+        </div>
+    </header>
+
+
+    <main class="container">
+        
+  
+        <section class="column">
+         
+            <div class="card">
+                <h3>🔍 Проверка наличия на складе</h3>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Введите артикул или название (например, Футболка)...">
+                    <button class="btn" id="searchBtn">Найти</button>
+                </div>
+                <div class="results" id="searchResults">
+                    <p class="placeholder-text">Введите запрос для поиска товара...</p>
+                </div>
+            </div>
+
+          
+            <div class="card margin-top">
+                <h3>📢 Объявления смены</h3>
+                <ul class="news-list">
+                    <li><strong>18.09:</strong> Прибыла новая коллекция "Autumn '26". Разгрузка в 14:00.</li>
+                    <li><strong>15.09:</strong> Напоминание: Скидки 20% на прошлую коллекцию действуют до конца недели.</li>
+                     <li><strong>17.09:</strong> Напоминание: У Дани Ски живот болит и он курит сигареты.</li>
+                </ul>
+            </div>
+        </section>
+
+   
+        <section class="column">
+         
+            <div class="card counter-card">
+                <h3>🛍️ Продажи за смену</h3>
+                <div class="sales-count" id="salesCount">0</div>
+                <p>проданных позиций</p>
+                <div class="btn-group">
+                    <button class="btn btn-success" id="addSaleBtn">+1 Продажа</button>
+                    <button class="btn btn-danger" id="resetSaleBtn">Сброс</button>
+                </div>
+            </div>
+
+      
+            <div class="card margin-top">
+                <h3>📅 Ближайшие смены</h3>
+                <div class="schedule">
+                    <div class="day"><span>Понедельник</span> <strong>09:00 - 18:00</strong></div>
+                    <div class="day"><span>Вторник</span> <strong>09:00 - 18:00</strong></div>
+                    <div class="day"><span>Среда</span> <strong>Выходной</strong></div>
+                    <div class="day"><span>Четверг</span> <strong>13:00 - 22:00</strong></div>
+                    <div class="day"><span>Пятница</span> <strong>13:00 - 22:00</strong></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; ALMA-style Internal Network. Все права защищены.
+    </footer>
+
+    <script src="yers3.js"></script>
+</body>
+</html>
