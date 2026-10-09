@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALMA-style — Портал Персонала</title>
+    <link rel="stylesheet" href="yers2.css">
+</head>
+<body>
+
+    <div class="login-overlay" id="loginModal">
+        <div class="login-card">
+            <h2>ALMA-style</h2>
+            <p>Вход в систему персонала</p>
+            <form id="loginForm">
+                <input type="text" id="employeeName" placeholder="Имя сотрудника" required>
+                <input type="password" placeholder="Пароль доступа" required>
+                <button type="submit" class="btn">Войти в систему</button>
+            </form>
+        </div>
+    </div>
+
+    <header>
+        <div class="brand">
+            <h1>ALMA-style</h1>
+            <span class="badge">Staff Portal</span>
+        </div>
+        <div class="user-info">
+            <span id="userName">Сотрудник: Гость</span>
+            <button class="btn btn-logout" id="logoutBtn">Выйти</button>
+        </div>
+    </header>
+
+
+    <main class="container">
+        
+  
+        <section class="column">
+         
+            <div class="card">
+                <h3>🔍 Проверка наличия на складе</h3>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Введите артикул или название (например, Футболка)...">
+                    <button class="btn" id="searchBtn">Найти</button>
+                </div>
+                <div class="results" id="searchResults">
+                    <p class="placeholder-text">Введите запрос для поиска товара...</p>
+                </div>
+            </div>
+
+
+       
+<div class="products-section">
+  
+  <div class="products-header">
+    <div class="search-box">
+      <input type="text" class="input-field" placeholder="Поиск по артикулу, названию или категории...">
+      <button class="btn btn-dark">Найти</button>
+    </div>
+    <div class="category-filters">
+      <button class="filter-btn active">Все</button>
+      <button class="filter-btn">Худи & Свитшоты</button>
+      <button class="filter-btn">Футболки</button>
+      <button class="filter-btn">Штаны & Джоггеры</button>
+      <button class="filter-btn">Аксессуары</button>
+    </div>
+  </div>
+
+
+  <div class="products-grid">
+
+    
+    <div class="product-card">
+      <div class="product-image">
+        <span class="stock-badge in-stock">В наличии (14)</span>
+      </div>
+      <div class="product-info">
+        <span class="product-sku">Арт: ALM-HD-01</span>
+        <h3 class="product-title">Oversize Худи "ALMA Classic"</h3>
+        <p class="product-category">Худи & Свитшоты</p>
+        <div class="product-bottom">
+          <span class="product-price">24 900 ₸</span>
+          <button class="btn btn-green btn-sm">+ В продажу</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="product-card">
+      <div class="product-image">
+        <span class="stock-badge in-stock">В наличии (8)</span>
+      </div>
+      <div class="product-info">
+        <span class="product-sku">Арт: ALM-TS-04</span>
+        <h3 class="product-title">Футболка "Street Culture" White</h3>
+        <p class="product-category">Футболки</p>
+        <div class="product-bottom">
+          <span class="product-price">12 500 ₸</span>
+          <button class="btn btn-green btn-sm">+ В продажу</button>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="product-card">
+      <div class="product-image">
+        <span class="stock-badge low-stock">Мало (2)</span>
+      </div>
+      <div class="product-info">
+        <span class="product-sku">Арт: ALM-PN-02</span>
+        <h3 class="product-title">Джоггеры "Urban Cargo" Black</h3>
+        <p class="product-category">Штаны & Джоггеры</p>
+        <div class="product-bottom">
+          <span class="product-price">21 000 ₸</span>
+          <button class="btn btn-green btn-sm">+ В продажу</button>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="product-card">
+      <div class="product-image">
+        <span class="stock-badge out-stock">Нет на складе</span>
+      </div>
+      <div class="product-info">
+        <span class="product-sku">Арт: ALM-CAP-01</span>
+        <h3 class="product-title">Бейсболка с вышивкой ALMA</h3>
+        <p class="product-category">Аксессуары</p>
+        <div class="product-bottom">
+          <span class="product-price">8 900 ₸</span>
+          <button class="btn btn-dark btn-sm" disabled style="opacity: 0.5; cursor: not-allowed;">Закончился</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .products-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .products-header {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .category-filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 6px 14px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover {
+    background-color: #f3f4f6;
+  }
+
+  .filter-btn.active {
+    background-color: #111827;
+    color: #ffffff;
+    border-color: #111827;
+  }
+
+ 
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .product-card {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .product-image {
+    height: 160px;
+    background-color: #e5e7eb;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 8px;
+  }
+
+  .stock-badge {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+  }
+
+  .in-stock { background-color: #16a34a; }
+  .low-stock { background-color: #d97706; }
+  .out-stock { background-color: #dc2626; }
+
+  .product-info {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .product-sku {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 600;
+  }
+
+  .product-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 4px 0;
+    color: #111827;
+  }
+
+  .product-category {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 12px;
+  }
+
+  .product-bottom {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #f3f4f6;
+  }
+
+  .product-price {
+    font-size: 15px;
+    font-weight: bold;
+    color: #111827;
+  }
+
+  .btn-sm {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+</style>
+
+          
+            <div class="card margin-top">
+                <h3>📢 Объявления смены</h3>
+                <ul class="news-list">
+                    <li><strong>18.09:</strong> Прибыла новая коллекция "Autumn '26". Разгрузка в 14:00.</li>
+                    <li><strong>15.09:</strong> Напоминание: Скидки 20% на прошлую коллекцию действуют до конца недели.</li>
+                     <li><strong>17.09:</strong> Напоминание: У Дани Ски живот болит и он курит сигареты.</li>
+                </ul>
+            </div>
+        </section>
+
+   
+        <section class="column">
+         
+            <div class="card counter-card">
+                <h3>🛍️ Продажи за смену</h3>
+                <div class="sales-count" id="salesCount">0</div>
+                <p>проданных позиций</p>
+                <div class="btn-group">
+                    <button class="btn btn-success" id="addSaleBtn">+1 Продажа</button>
+                    <button class="btn btn-danger" id="resetSaleBtn">Сброс</button>
+                </div>
+            </div>
+
+      
+            <div class="card margin-top">
+                <h3>📅 Ближайшие смены</h3>
+                <div class="schedule">
+                    <div class="day"><span>Понедельник</span> <strong>09:00 - 18:00</strong></div>
+                    <div class="day"><span>Вторник</span> <strong>09:00 - 18:00</strong></div>
+                    <div class="day"><span>Среда</span> <strong>Выходной</strong></div>
+                    <div class="day"><span>Четверг</span> <strong>13:00 - 22:00</strong></div>
+                    <div class="day"><span>Пятница</span> <strong>13:00 - 22:00</strong></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; ALMA-style Internal Network. Все права защищены.
+    </footer>
+
+    <script src="yers3.js"></script>
+</body>
+</html>
